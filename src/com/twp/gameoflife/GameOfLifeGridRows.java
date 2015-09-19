@@ -16,9 +16,17 @@ public class GameOfLifeGridRows {
     public int findNumberOfLiveCells(int cellIndex) {
         int count = 0;
         if (cellIndex > MIN_INDEX)
-            count += row.get(cellIndex - 1).addsNumberToCountOfLiveCell();
+            count += getLeftCell(cellIndex).addsNumberToCountOfLiveCell();
         if (cellIndex < MAX_INDEX)
-            count += row.get(cellIndex + 1).addsNumberToCountOfLiveCell();
+            count += getRightCell(cellIndex).addsNumberToCountOfLiveCell();
         return count;
+    }
+
+    private StateOfCell getRightCell(int index) {
+        return row.get(index + 1);
+    }
+
+    private StateOfCell getLeftCell(int index) {
+        return row.get(index - 1);
     }
 }
