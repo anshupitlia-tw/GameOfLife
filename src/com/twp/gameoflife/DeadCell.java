@@ -6,4 +6,9 @@ public class DeadCell implements StateOfCell{
     public String getDisplayableState() {
         return "-";
     }
+
+    @Override
+    public int addsNumberToCountOfLiveCell() {
+        return 0;
+    }
 }

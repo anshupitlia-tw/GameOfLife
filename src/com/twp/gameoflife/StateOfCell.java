@@ -2,5 +2,7 @@ package com.twp.gameoflife;
 
 public interface StateOfCell {
 
-     String getDisplayableState();
+    String getDisplayableState();
+
+    int addsNumberToCountOfLiveCell();
 }

@@ -12,4 +12,11 @@ public class LiveCellTest {
 
         assertEquals("X", liveCell.getDisplayableState());
     }
+
+    @Test
+    public void shouldAddOneToTheCountOfLiveCells() {
+        LiveCell liveCell = new LiveCell();
+
+        assertEquals(1, liveCell.addsNumberToCountOfLiveCell());
+    }
 }

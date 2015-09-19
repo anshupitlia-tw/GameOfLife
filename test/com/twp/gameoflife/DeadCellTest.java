@@ -12,4 +12,11 @@ public class DeadCellTest {
 
         assertEquals("-", deadCell.getDisplayableState());
     }
+
+    @Test
+    public void shouldNotAddAnythingToTheCountOfLiveCells() {
+        DeadCell deadCell = new DeadCell();
+
+        assertEquals(0, deadCell.addsNumberToCountOfLiveCell());
+    }
 }

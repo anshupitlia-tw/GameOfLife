@@ -6,4 +6,10 @@ public class LiveCell implements StateOfCell {
     public String getDisplayableState() {
         return "X";
     }
+
+    @Override
+    public int addsNumberToCountOfLiveCell() {
+        return 1;
+    }
+
 }
