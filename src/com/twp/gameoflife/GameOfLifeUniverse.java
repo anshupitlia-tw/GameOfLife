@@ -15,11 +15,23 @@ public class GameOfLifeUniverse {
 
     public int findNumberOfLiveCells(int rowIndex, int columnIndex) {
         int count = 0;
-        count += columns.get(rowIndex).findNumberOfLiveCellsToTheLeftAndRight(columnIndex);
+        count += getSelfRow(rowIndex).findNumberOfLiveCellsToTheLeftAndRight(columnIndex);
         if (rowIndex > MIN_INDEX)
-            count += columns.get(rowIndex - 1).findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(columnIndex);
+            count += getBottomRow(rowIndex).findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(columnIndex);
         if (rowIndex < MAX_INDEX)
-            count += columns.get(rowIndex + 1).findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(columnIndex);
+            count += getTopRow(rowIndex).findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(columnIndex);
         return count;
+    }
+
+    private GameOfLifeGridRows getTopRow(int index) {
+        return columns.get(index + 1);
+    }
+
+    private GameOfLifeGridRows getBottomRow(int index) {
+        return columns.get(index - 1);
+    }
+
+    private GameOfLifeGridRows getSelfRow(int index) {
+        return columns.get(index);
     }
 }
