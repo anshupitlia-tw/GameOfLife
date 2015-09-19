@@ -126,4 +126,17 @@ public class GameOfLifeGridRowsTest {
 
         assertEquals(false, gameOfLifeGridRows.toggleStateOfCell(0).isAlive());
     }
+
+
+    @Test
+    public void shouldMakeACellToDieIfItIsALiveAndIfNumberOfAliveNeighboursIsMoreThanThree() {
+        ArrayList<StateOfCell> row = new ArrayList<>();
+        StateOfCell cellOne = new LiveCell();
+        row.add(cellOne);
+        int numberOfAliveCellsInNeighbourHood = 4;
+        GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
+        gameOfLifeGridRows.determineStateOnTick(numberOfAliveCellsInNeighbourHood, 0);
+
+        assertEquals(false, gameOfLifeGridRows.toggleStateOfCell(0).isAlive());
+    }
 }

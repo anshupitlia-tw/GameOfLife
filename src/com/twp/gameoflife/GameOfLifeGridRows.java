@@ -47,6 +47,8 @@ public class GameOfLifeGridRows {
         StateOfCell cell = row.get(columnIndex);
         if (cell.isAlive() && numberOfLiveCellsInNeighbourHood < 2 ) {
         }
+        else if (cell.isAlive() && numberOfLiveCellsInNeighbourHood > 3) {
+        }
         return toggleStateOfCell(columnIndex);
     }
     public int getMaximumCells() {
