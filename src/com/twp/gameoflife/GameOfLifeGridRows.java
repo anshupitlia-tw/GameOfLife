@@ -60,4 +60,12 @@ public class GameOfLifeGridRows {
     public int getMinimumCellIndex() {
         return MIN_INDEX;
     }
+
+    public String returnRowsInDisplayableFormat() {
+        String displayable = "";
+        for (StateOfCell cell: row) {
+            displayable += cell.getDisplayableState();
+        }
+        return displayable;
+    }
 }
