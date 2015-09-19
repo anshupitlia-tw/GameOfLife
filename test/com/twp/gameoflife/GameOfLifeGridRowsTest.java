@@ -29,7 +29,7 @@ public class GameOfLifeGridRowsTest {
         ArrayList<StateOfCell> row = new ArrayList<>();
         StateOfCell cellOne = new LiveCell();
         StateOfCell cellTwo = new DeadCell();
-        StateOfCell cellThree = new LiveCell();
+        StateOfCell cellThree = new DeadCell();
         StateOfCell cellFour = new DeadCell();
         row.add(cellOne);
         row.add(cellTwo);
@@ -38,5 +38,21 @@ public class GameOfLifeGridRowsTest {
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
         assertEquals(1, gameOfLifeGridRows.findNumberOfLiveCells(1));
+    }
+
+    @Test
+    public void shouldFindNumberOfLiveCellsToTheRightAndLeftOfACellAndReturnTwoIfTwoLiveCellsFound() {
+        ArrayList<StateOfCell> row = new ArrayList<>();
+        StateOfCell cellOne = new LiveCell();
+        StateOfCell cellTwo = new LiveCell();
+        StateOfCell cellThree = new LiveCell();
+        StateOfCell cellFour = new DeadCell();
+        row.add(cellOne);
+        row.add(cellTwo);
+        row.add(cellThree);
+        row.add(cellFour);
+        GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
+
+        assertEquals(2, gameOfLifeGridRows.findNumberOfLiveCells(1));
     }
 }
