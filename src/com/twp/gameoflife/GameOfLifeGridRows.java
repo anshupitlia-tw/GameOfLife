@@ -11,6 +11,6 @@ public class GameOfLifeGridRows {
     }
 
     public int findNumberOfLiveCells(int cellIndex) {
-        return 0;
+        return cellIndex;
     }
 }
