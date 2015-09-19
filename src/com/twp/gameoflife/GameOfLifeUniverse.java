@@ -43,4 +43,17 @@ public class GameOfLifeUniverse {
     private GameOfLifeGridRows getSelfRow(int index) {
         return columns.get(index);
     }
+
+
+    public void tick() {
+        for(int rowIndex = MIN_INDEX; rowIndex < MAX_INDEX; rowIndex++) {
+            GameOfLifeGridRows rows = columns.get(rowIndex);
+            int maxCells = rows.getMaximumCells();
+            int minCells = rows.getMinimumCellIndex();
+            for (int columnIndex = minCells; columnIndex < maxCells; columnIndex++) {
+                int numberOfLiveCells = findNumberOfLiveCells(rowIndex, columnIndex);
+                rows.determineStateOnTick(numberOfLiveCells, columnIndex);
+            }
+        }
+    }
 }
