@@ -55,4 +55,20 @@ public class GameOfLifeGridRowsTest {
 
         assertEquals(2, gameOfLifeGridRows.findNumberOfLiveCellsToTheLeftAndRight(1));
     }
+
+    @Test
+    public void shouldFindNumberOfLiveCellsToTheRightAndLeftOfACellAndCountItsOwnStateToAddToLiveCellIfItIsAlive() {
+        ArrayList<StateOfCell> row = new ArrayList<>();
+        StateOfCell cellOne = new LiveCell();
+        StateOfCell cellTwo = new LiveCell();
+        StateOfCell cellThree = new LiveCell();
+        StateOfCell cellFour = new DeadCell();
+        row.add(cellOne);
+        row.add(cellTwo);
+        row.add(cellThree);
+        row.add(cellFour);
+        GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
+
+        assertEquals(3, gameOfLifeGridRows.findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(1));
+    }
 }

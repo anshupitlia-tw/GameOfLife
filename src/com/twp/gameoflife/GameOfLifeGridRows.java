@@ -29,4 +29,8 @@ public class GameOfLifeGridRows {
     private StateOfCell getLeftCell(int index) {
         return row.get(index - 1);
     }
+
+    public int findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(int cellIndex) {
+        return findNumberOfLiveCellsToTheLeftAndRight(cellIndex) + row.get(cellIndex).addsNumberToCountOfLiveCell();
+    }
 }
