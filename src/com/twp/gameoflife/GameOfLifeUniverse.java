@@ -23,6 +23,15 @@ public class GameOfLifeUniverse {
         return count;
     }
 
+    public String returnGameOfLifeUniverseInDisplayableFormat() {
+        String displayable = "";
+        for(int rowIndex = MIN_INDEX; rowIndex < MAX_INDEX; rowIndex++) {
+            GameOfLifeGridRows rows = columns.get(rowIndex);
+            displayable += rows.returnRowsInDisplayableFormat() + "\n";
+        }
+        return displayable;
+    }
+
     private GameOfLifeGridRows getTopRow(int index) {
         return columns.get(index + 1);
     }
