@@ -13,7 +13,7 @@ public class GameOfLifeGridRows {
         MAX_INDEX = row.size();
     }
 
-    public int findNumberOfLiveCells(int cellIndex) {
+    public int findNumberOfLiveCellsToTheLeftAndRight(int cellIndex) {
         int count = 0;
         if (cellIndex > MIN_INDEX)
             count += getLeftCell(cellIndex).addsNumberToCountOfLiveCell();

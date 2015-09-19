@@ -21,7 +21,7 @@ public class GameOfLifeGridRowsTest {
         row.add(cellFour);
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
-        assertEquals(0, gameOfLifeGridRows.findNumberOfLiveCells(0));
+        assertEquals(0, gameOfLifeGridRows.findNumberOfLiveCellsToTheLeftAndRight(0));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class GameOfLifeGridRowsTest {
         row.add(cellFour);
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
-        assertEquals(1, gameOfLifeGridRows.findNumberOfLiveCells(1));
+        assertEquals(1, gameOfLifeGridRows.findNumberOfLiveCellsToTheLeftAndRight(1));
     }
 
     @Test
@@ -53,6 +53,6 @@ public class GameOfLifeGridRowsTest {
         row.add(cellFour);
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
-        assertEquals(2, gameOfLifeGridRows.findNumberOfLiveCells(1));
+        assertEquals(2, gameOfLifeGridRows.findNumberOfLiveCellsToTheLeftAndRight(1));
     }
 }
