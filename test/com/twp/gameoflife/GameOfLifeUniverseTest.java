@@ -35,7 +35,7 @@ public class GameOfLifeUniverseTest {
         rowThree.add(cellOne);
         rowThree.add(cellTwo);
         rowThree.add(cellThree);
-        GameOfLifeGridRows gameOfLifeGridRowsThree = new GameOfLifeGridRows(rowTwo);
+        GameOfLifeGridRows gameOfLifeGridRowsThree = new GameOfLifeGridRows(rowThree);
 
         ArrayList<GameOfLifeGridRows> gameOfLifeGridRowses = new ArrayList<>();
         gameOfLifeGridRowses.add(gameOfLifeGridRowsOne);
