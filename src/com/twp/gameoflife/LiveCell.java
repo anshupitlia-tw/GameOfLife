@@ -12,4 +12,13 @@ public class LiveCell implements StateOfCell {
         return 1;
     }
 
+    @Override
+    public boolean isAlive() {
+        return true;
+    }
+
+    @Override
+    public boolean isDead() {
+        return false;
+    }
 }

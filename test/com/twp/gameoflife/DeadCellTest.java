@@ -19,4 +19,18 @@ public class DeadCellTest {
 
         assertEquals(0, deadCell.addsNumberToCountOfLiveCell());
     }
+
+    @Test
+    public void shouldReturnFalseIfAskedItIsAlive() {
+        DeadCell deadCell = new DeadCell();
+
+        assertEquals(false, deadCell.isAlive());
+    }
+
+    @Test
+    public void shouldReturnTrueIfAskedItIsDead() {
+        DeadCell deadCell = new DeadCell();
+
+        assertEquals(true, deadCell.isDead());
+    }
 }

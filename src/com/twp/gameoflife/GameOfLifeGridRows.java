@@ -33,4 +33,10 @@ public class GameOfLifeGridRows {
     public int findNumberOfLiveCellsToTheLeftAndRightIncludingSelf(int cellIndex) {
         return findNumberOfLiveCellsToTheLeftAndRight(cellIndex) + row.get(cellIndex).addsNumberToCountOfLiveCell();
     }
+
+    public StateOfCell changeStateToDeath(int rowIndex) {
+        StateOfCell cell = row.get(rowIndex);
+        cell = new DeadCell();
+        return cell;
+    }
 }

@@ -5,4 +5,9 @@ public interface StateOfCell {
     String getDisplayableState();
 
     int addsNumberToCountOfLiveCell();
+
+    boolean isAlive();
+
+    boolean isDead();
+
 }
