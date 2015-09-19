@@ -39,4 +39,10 @@ public class GameOfLifeGridRows {
         cell = new DeadCell();
         return cell;
     }
+
+    public StateOfCell changeStateToAlive(int rowIndex) {
+        StateOfCell cell = row.get(rowIndex);
+        cell = new LiveCell();
+        return cell;
+    }
 }

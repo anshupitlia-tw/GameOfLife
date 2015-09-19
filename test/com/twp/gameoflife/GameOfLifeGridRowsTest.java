@@ -99,4 +99,19 @@ public class GameOfLifeGridRowsTest {
 
         assertEquals(true, gameOfLifeGridRows.changeStateToDeath(1).isDead());
     }
+
+
+    @Test
+    public void shouldBeAbleToToggleItsStateFromDeadToLive() {
+        ArrayList<StateOfCell> row = new ArrayList<>();
+        StateOfCell cellOne = new DeadCell();
+        StateOfCell cellTwo = new LiveCell();
+        StateOfCell cellThree = new DeadCell();
+        row.add(cellOne);
+        row.add(cellTwo);
+        row.add(cellThree);
+        GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
+
+        assertEquals(true, gameOfLifeGridRows.changeStateToAlive(2).isAlive());
+    }
 }
