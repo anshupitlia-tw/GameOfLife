@@ -97,7 +97,7 @@ public class GameOfLifeGridRowsTest {
         row.add(cellThree);
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
-        assertEquals(true, gameOfLifeGridRows.changeStateToDeath(1).isDead());
+        assertEquals(true, gameOfLifeGridRows.toggleStateOfCell(1).isDead());
     }
 
 
@@ -112,6 +112,6 @@ public class GameOfLifeGridRowsTest {
         row.add(cellThree);
         GameOfLifeGridRows gameOfLifeGridRows = new GameOfLifeGridRows(row);
 
-        assertEquals(true, gameOfLifeGridRows.changeStateToAlive(2).isAlive());
+        assertEquals(true, gameOfLifeGridRows.toggleStateOfCell(2).isAlive());
     }
 }

@@ -34,15 +34,12 @@ public class GameOfLifeGridRows {
         return findNumberOfLiveCellsToTheLeftAndRight(cellIndex) + row.get(cellIndex).addsNumberToCountOfLiveCell();
     }
 
-    public StateOfCell changeStateToDeath(int rowIndex) {
+    public StateOfCell toggleStateOfCell(int rowIndex) {
         StateOfCell cell = row.get(rowIndex);
-        cell = new DeadCell();
-        return cell;
-    }
-
-    public StateOfCell changeStateToAlive(int rowIndex) {
-        StateOfCell cell = row.get(rowIndex);
-        cell = new LiveCell();
+        if (cell.isAlive())
+            cell = new DeadCell();
+        else
+            cell = new LiveCell();
         return cell;
     }
 }
