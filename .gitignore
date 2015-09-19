@@ -1,3 +1,5 @@
 GameOfLife.iml
 DS_Store
 .idea
+out
+lib/GameOfLife.jar
